@@ -25,5 +25,4 @@ stages:
       inputs:
         command: build
         dockerfile: '$(Build.SourcesDirectory)/aspnet-core-dotnet-core/Dockerfile'
-        tags: |
-          $(tag)
+        tags:

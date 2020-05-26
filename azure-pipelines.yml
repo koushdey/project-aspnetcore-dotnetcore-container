@@ -9,7 +9,7 @@ resources:
 - repo: self
 
 variables:
-  tag: '$(Build.BuildId), KAI'
+  tag: '$(Build.BuildId)'
 
 stages:
 - stage: Build
@@ -25,5 +25,4 @@ stages:
       inputs:
         command: build
         dockerfile: '$(Build.SourcesDirectory)/aspnet-core-dotnet-core/Dockerfile'
-        tags: |
-          $(tag)
+        tags:

@@ -31,12 +31,12 @@ jobs:
     - name: Deploy to Kubernetes cluster
       uses: Azure/k8s-deploy@users/koushdey/addAnnotationsk8sDeploy
       with:
-        namespace: bugbash1621bf98
+        namespace: bugbash1622bf98
         manifests: |
           manifests/deployment-1.yml
           manifests/service-1.yml
           manifests/ingress-1.yml
         images: |
-          abhisheaacr.azurecr.io/bugbash1621:${{ github.sha }}
+          abhisheaacr.azurecr.io/bugbash1622:${{ github.sha }}
         imagepullsecrets: |
-          bugbash1621dockerauth
+          bugbash1622dockerauth

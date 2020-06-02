@@ -28,6 +28,14 @@ jobs:
         kubeconfig: ${{ secrets.aks_bugbash1621_kubeConfig }}
       id: setcontext
       
+    - name: Create namespace
+      run: |
+        namespacePresent=`kubectl get namespace | grep bugbash1622bf98 | wc -l`
+        if [ $namespacePresent -eq 0 ]
+        then
+            echo `kubectl create namespace bugbash1622bf98`
+        fi
+        
     - name: Deploy to Kubernetes cluster
       uses: Azure/k8s-deploy@users/koushdey/addAnnotationsk8sDeploy
       with:

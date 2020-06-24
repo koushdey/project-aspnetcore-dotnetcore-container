@@ -31,8 +31,8 @@ stages:
       inputs:
         connectionType: 'Kubernetes Service Connection'
         kubernetesServiceEndpoint: 'aksKodey8f98'
-        namespace: 'aksKodey8f98'
+        namespace: 'aksKodey8187'
         command: 'get'
-        arguments: 'namespace/aksKodey'
+        arguments: 'pods'
         secretType: 'dockerRegistry'
         containerRegistryType: 'Azure Container Registry'

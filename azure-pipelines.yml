@@ -31,8 +31,8 @@ stages:
       inputs:
         connectionType: 'Kubernetes Service Connection'
         kubernetesServiceEndpoint: 'azuredevops'
-        namespace: 'azuredevops'
-        command: 'get'
-        arguments: 'pods'
+        namespace: 'azuredevops'       
+        command: 'apply'
+        arguments: '-f ./test.json'
         secretType: 'dockerRegistry'
         containerRegistryType: 'Azure Container Registry'

@@ -27,3 +27,12 @@ stages:
         dockerfile: '$(Build.SourcesDirectory)/aspnet-core-dotnet-core/Dockerfile'
         tags: |
           $(tag)
+    - task: Kubernetes@1
+      inputs:
+        connectionType: 'Kubernetes Service Connection'
+        kubernetesServiceEndpoint: 'aksKodey8f98'
+        namespace: 'aksKodey8f98'
+        command: 'get'
+        arguments: 'namespace/aksKodey'
+        secretType: 'dockerRegistry'
+        containerRegistryType: 'Azure Container Registry'

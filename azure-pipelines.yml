@@ -30,8 +30,8 @@ stages:
     - task: Kubernetes@1
       inputs:
         connectionType: 'Kubernetes Service Connection'
-        kubernetesServiceEndpoint: 'aksKodey8f98'
-        namespace: 'aksKodey8187'
+        kubernetesServiceEndpoint: 'azuredevops'
+        namespace: 'azuredevops'
         command: 'get'
         arguments: 'pods'
         secretType: 'dockerRegistry'

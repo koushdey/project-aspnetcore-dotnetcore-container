@@ -20,13 +20,13 @@ stages:
     pool:
       vmImage: 'ubuntu-latest'
     steps:
-    - task: Docker@2
-      displayName: Build an image
-      inputs:
-        command: build
-        dockerfile: '$(Build.SourcesDirectory)/aspnet-core-dotnet-core/Dockerfile'
-        tags: |
-          $(tag)
+    #- task: Docker@2
+    #  displayName: Build an image
+    #  inputs:
+    #    command: build
+    #    dockerfile: '$(Build.SourcesDirectory)/aspnet-core-dotnet-core/Dockerfile'
+    #    tags: |
+    #      $(tag)
     - task: Kubernetes@1
       inputs:
         connectionType: 'Kubernetes Service Connection'
@@ -36,3 +36,4 @@ stages:
         arguments: '-f ./test.json'
         secretType: 'dockerRegistry'
         containerRegistryType: 'Azure Container Registry'
+        outputFormat: ''

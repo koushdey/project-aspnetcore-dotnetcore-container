@@ -36,4 +36,4 @@ stages:
         arguments: '-f ./test.json'
         secretType: 'dockerRegistry'
         containerRegistryType: 'Azure Container Registry'
-        outputFormat: 'none'
+        outputFormat: ''
